@@ -48,15 +48,24 @@ describe('@MomsFriendlyDevCo/Expressy - hotswap webserver', ()=> {
 			})
 	);
 
-	it('ReST: get', ()=>
-		axios.get(`${baseUrl}/api/gadgets/bar`)
-			.then(({data}) => {
-				expect(data).to.be.an('object');
-				expect(data).to.deep.equal({
-					id: 'bar',
-					title: 'Bar!',
-				});
-			})
+	it('ReST: get', ()=> Promise.resolve()
+		.then(()=> axios.get(`${baseUrl}/api/gadgets/bar`))
+		.then(({data}) => {
+			expect(data).to.be.an('object');
+			expect(data).to.deep.equal({
+				id: 'bar',
+				title: 'Bar!',
+			});
+		})
+		.then(()=> expressy.hotswap(`${dirName()}/hotswapable/gadgets.get.js`))
+		.then(()=> axios.get(`${baseUrl}/api/gadgets/bar`))
+		.then(({data}) => {
+			expect(data).to.be.an('object');
+			expect(data).to.deep.equal({
+				id: 'bar',
+				title: 'Bar!',
+			});
+		})
 	);
 
 	it('ReST: post', ()=>
