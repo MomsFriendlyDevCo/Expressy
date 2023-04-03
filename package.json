@@ -1,0 +1,59 @@
+{
+  "name": "@momsfriendlydevco/expressy",
+  "version": "0.0.0",
+  "description": "Express with some extra features",
+  "scripts": {
+    "lint": "eslint lib",
+    "test": "mocha"
+  },
+  "keywords": [
+    "express"
+  ],
+  "type": "module",
+  "imports": {
+    "#lib/*": "./lib/*.js"
+  },
+  "exports": {
+    ".": "./lib/expressy.js",
+    "./*": "./lib/*.js"
+  },
+  "main": "lib/expressy.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MomsFriendlyDevCo/Expressy.git"
+  },
+  "author": "Matt Carter <matt@mfdc.biz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MomsFriendlyDevCo/Expressy/issues"
+  },
+  "homepage": "https://github.com/MomsFriendlyDevCo/Expressy#readme",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es6": true,
+      "node": true,
+      "mocha": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 13,
+      "sourceType": "module"
+    }
+  },
+  "devDependencies": {
+    "axios": "^1.3.4",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "mocha-logger": "^1.0.8"
+  }
+}
