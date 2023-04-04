@@ -19,7 +19,7 @@ describe('@MomsFriendlyDevCo/Expressy - hotswap webserver', ()=> {
 	});
 
 	it('setup test data', ()=>
-			expressy.gadgets = [
+		expressy.gadgets = [
 			{ id: 'foo', title: 'Foo!' },
 			{ id: 'bar', title: 'Bar!' },
 			{ id: 'baz', title: 'Baz!' },
