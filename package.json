@@ -51,10 +51,17 @@
     }
   },
   "devDependencies": {
+    "@doop/esm-loader": "^1.0.0",
     "@momsfriendlydevco/es6": "^1.2.0",
     "axios": "^1.3.4",
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
     "mocha-logger": "^1.0.8"
+  },
+  "mocha": {
+    "node-option": [
+      "loader=@doop/esm-loader",
+      "no-warnings=ExperimentalWarning"
+    ]
   }
 }
