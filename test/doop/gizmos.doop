@@ -1,0 +1,39 @@
+<script endpoint>
+app.loaded.push('DELETE /api/gizmos/:id');
+
+app.delete('/api/gizmos/:id', (req, res) => res.send(
+	app.gizmos = app.gizmos.filter(w => w.id != req.params.id)
+));
+</script>
+
+
+<script endpoint>
+app.loaded.push('GET /api/gizmos/:id');
+
+app.get('/api/gizmos/:id', (req, res) => {
+	res.send(app.gizmos.find(w =>
+		w.id == req.params.id
+	));
+});
+</script>
+
+
+<script endpoint>
+app.loaded.push('POST /api/gizmos/:id');
+
+app.post('/api/gizmos/:id', (req, res) => {
+	return res.send({
+		...app.gizmos.find(w => w.id == req.params.id),
+		...req.body,
+	});
+});
+</script>
+
+
+<script endpoint>
+app.loaded.push('GET /api/gizmos');
+
+app.get('/api/gizmos', (req, res) => {
+	res.send(app.gizmos);
+});
+</script>

@@ -1,0 +1,6 @@
+<script on="preReady">
+app.loaded.push('USE preReady:errorHandling');
+app.use((req, res, next) => {
+	res.sendStatus(404);
+})
+</script>

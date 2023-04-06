@@ -1,0 +1,39 @@
+<script endpoint>
+app.loaded.push('DELETE /api/doodads/:id');
+
+app.delete('/api/doodads/:id', (req, res) => res.send(
+	app.doodads = app.doodads.filter(w => w.id != req.params.id)
+));
+</script>
+
+
+<script endpoint>
+app.loaded.push('GET /api/doodads/:id');
+
+app.get('/api/doodads/:id', (req, res) => {
+	res.send(app.doodads.find(w =>
+		w.id == req.params.id
+	));
+});
+</script>
+
+
+<script endpoint>
+app.loaded.push('POST /api/doodads/:id');
+
+app.post('/api/doodads/:id', (req, res) => {
+	return res.send({
+		...app.doodads.find(w => w.id == req.params.id),
+		...req.body,
+	});
+});
+</script>
+
+
+<script endpoint>
+app.loaded.push('GET /api/doodads');
+
+app.get('/api/doodads', (req, res) => {
+	res.send(app.doodads);
+});
+</script>
