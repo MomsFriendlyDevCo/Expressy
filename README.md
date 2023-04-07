@@ -5,6 +5,7 @@
 * File watch support
 * Hot-swap routing - can rebuild routes on the fly for single file changes without rebooting the whole stack
 * [Doop-ESM loader](https://github.com/MomsFriendlyDevCo/Expressy#readme) support
+* Out-of-the-box base middleware
 
 
 To use the Expressy module with the Doop-ESM loader see the instructions in [@Doop/ESM-Loader](https://github.com/MomsFriendlyDevCo/Expressy#readme).
@@ -33,3 +34,10 @@ new Expressy()
 	  widgets = widgets.filter(w => w.id != req.params.id)
 	))
 ```
+
+
+Base middleware
+---------------
+This module automatically loads various Express middleware when booting a server.
+
+Configure `expressy.commonMiddleware` ([defaults in commonMiddleware.js](lib/commonMiddleware.js)) to change whether certain items are loaded and with what options.

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import bodyParser from 'body-parser';
 import {dirName} from '@momsfriendlydevco/es6';
 import Expressy from '#lib/expressy';
 import {expect} from 'chai';
@@ -13,10 +12,9 @@ describe('@MomsFriendlyDevCo/Expressy - hotswap webserver', ()=> {
 
 	let expressy;
 
-	it('setup simple webserver', ()=> {
+	it('setup simple webserver', ()=>
 		expressy = new Expressy()
-			.use(bodyParser.json())
-	});
+	);
 
 	it('setup test data', ()=>
 		expressy.gadgets = [

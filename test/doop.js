@@ -1,5 +1,4 @@
 import axios from 'axios';
-import bodyParser from 'body-parser';
 import {dirName} from '@momsfriendlydevco/es6';
 import Expressy from '#lib/expressy';
 import {expect} from 'chai';
@@ -65,7 +64,6 @@ describe('@MomsFriendlyDevCo/Expressy - Doop webserver', ()=> {
 		this.timeout(10 * 1000); //~ 10s
 
 		return app
-			.use(bodyParser.json())
 			.watch(`${dirName()}/doop/*.doop`) // Add all files
 			.emitSequence() // Kick off the usual load sequence order
 	});

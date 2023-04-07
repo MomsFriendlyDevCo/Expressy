@@ -1,5 +1,4 @@
 import axios from 'axios';
-import bodyParser from 'body-parser';
 import Expressy from '#lib/expressy';
 import {expect} from 'chai';
 import mlog from 'mocha-logger';
@@ -23,7 +22,6 @@ describe('@MomsFriendlyDevCo/Expressy - simple webserver', ()=> {
 
 	it('set up various routes', ()=> {
 		expressy
-			.use(bodyParser.json())
 			.use((req, res, next) => {
 				mlog.log('HIT', req.method, req.path)
 				next();
