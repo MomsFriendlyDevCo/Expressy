@@ -11,7 +11,8 @@
   ],
   "type": "module",
   "imports": {
-    "#lib/*": "./lib/*.js"
+    "#lib/*": "./lib/*.js",
+    "#middleware/*": "./middleware/*.js"
   },
   "exports": {
     ".": "./lib/expressy.js",
