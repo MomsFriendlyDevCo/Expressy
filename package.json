@@ -43,6 +43,7 @@
     "debug": "^4.3.4",
     "express": "^4.18.2",
     "express-jail": "^0.0.5",
+    "express-log-url": "^1.5.1",
     "helmet": "^6.0.1",
     "lodash": "^4.17.21"
   },
