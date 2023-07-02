@@ -42,6 +42,7 @@
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "express": "^4.18.2",
+    "express-basic-auth": "^1.2.1",
     "express-jail": "^0.0.5",
     "express-log-url": "^1.5.1",
     "helmet": "^6.0.1",
